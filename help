@@ -1,0 +1,46 @@
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide img');
+    const containerWidth = document.querySelector('.carousel-container').clientWidth;
+
+    function showSlides() {
+        slideIndex++;
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        const offset = -slideIndex * containerWidth;
+        document.querySelector('.carousel-slide').style.transform = `translateX(${offset}px)`;
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds (3000 milliseconds)
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        const offset = -slideIndex * containerWidth;
+        document.querySelector('.carousel-slide').style.transform = `translateX(${offset}px)`;
+    }
+
+    function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        const offset = -slideIndex * containerWidth;
+        document.querySelector('.carousel-slide').style.transform = `translateX(${offset}px)`;
+    }
+
+    showSlides();
+</script>
+
+
+
+<!--slider code-->
+<div class="image-collection">
+    <h2>Featured Collection 1</h2>
+    <div class="carousel-container" id="slider1">
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+        <button class="prev" onclick="prevSlide('slider1')">&#10094;</button>
+        <button class="next" onclick="nextSlide('slider1')">&#10095;</button>
+    </div>
+</div>

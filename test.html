@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collection with Automatic Slider</title>
+    <style>
+        /* Styles for slideshow container */
+        .carousel-container {
+            max-width: 300px; /* Adjust the maximum width as needed */
+            margin: 0 auto; /* Center the slideshow */
+            overflow: hidden; /* Hide overflow */
+            position: relative; /* Position for absolute positioning of buttons */
+        }
+
+        /* Styles for individual slides */
+        .carousel-slide img {
+            display: none; /* Hide all images by default */
+            width: 100%; /* Ensure images fill their container */
+        }
+
+        /* Styles for slideshow buttons */
+        .prev, .next {
+            position: absolute; /* Position buttons */
+            top: 50%; /* Align buttons vertically */
+            transform: translateY(-50%); /* Adjust vertical position */
+            background: transparent; /* Transparent background */
+            border: none; /* No border */
+            color: white; /* Button color */
+            font-size: 20px; /* Button font size */
+            cursor: pointer; /* Cursor style */
+            z-index: 1; /* Ensure buttons appear above slides */
+        }
+
+        .prev {
+            left: 0; /* Position left button */
+        }
+
+        .next {
+            right: 0; /* Position right button */
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="test.html">test</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="image-collection">
+        <h2>Featured Collection</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="img/black-leather-shoes-on-white-background.webp" alt="Image 1">
+                <img src="img/friends-legs-and-shoes-on-city-steps-for-bonding-travel-and-urban-break-with-drinks-smoothie.webp" alt="Image 2">
+                <img src="img/old-and-new-canvas-tennis-shoes.webp" alt="Image 3">
+                <!-- Add more images as needed -->
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide img');
+
+        function showSlides() {
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[slideIndex].style.display = 'block';
+            setTimeout(showSlides, 4000); // Change slide every 3 seconds (3000 milliseconds)
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            showSlides();
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            showSlides();
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>

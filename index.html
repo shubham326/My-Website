@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Marketing Website</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #eaf3ef;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        .navbar-brand img {
+            width: 120px;
+            height: auto;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #333;
+        }
+
+        .image-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-container:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #18b26b;
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: gray;
+            color: #fff;
+        }
+
+        /* Styles for slideshow container */
+        .carousel-container {
+          background-color: rgb(247, 244, 243);
+            max-width: 300px; /* Adjust the maximum width as needed */
+            max-height: 200px; /* Adjust the maximum height as needed */
+            margin: 0 auto; /* Center the slideshow */
+            overflow: hidden; /* Hide overflow */
+            position: relative; /* Position for absolute positioning of buttons */
+        }
+
+        /* Styles for individual slides */
+        .carousel-slide {
+            display: flex; /* Use flexbox to align images horizontally */
+            transition: transform 0.5s ease; /* Smooth transition for slide animation */
+        }
+
+        .carousel-slide img {
+            flex: 0 0 auto; /* Prevent images from growing/shrinking */
+            width: 100%; /* Ensure images fill their container */
+            height: 100%; /* Ensure images fill their container */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        /* Styles for slideshow buttons */
+        .prev, .next {
+            position: absolute; /* Position buttons */
+            top: 50%; /* Align buttons vertically */
+            transform: translateY(-50%); /* Adjust vertical position */
+            background: transparent; /* Transparent background */
+            border: none; /* No border */
+            color: white; /* Button color */
+            font-size: 20px; /* Button font size */
+            cursor: pointer; /* Cursor style */
+            z-index: 1; /* Ensure buttons appear above slides */
+        }
+
+        .prev {
+            left: 0; /* Position left button */
+        }
+
+        .next {
+            right: 0; /* Position right button */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="test.html">test</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Container for main content -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Welcome to our Affiliate Marketing Website</h1>
+    <!-- Image Container -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="image-container text-center">
+              <img src="img/gallery_06.jpg" alt="Product 1">
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-container text-center">
+              <img src="img/gallery_09.jpg" alt="Product 2">
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-container text-center">
+              <img src="sass\scss\img\friends-legs-and-shoes-on-city-steps-for-bonding-travel-and-urban-break-with-drinks-smoothie.webp" alt="Product 3">
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-container text-center">
+              <img src="sass\scss\img\young-man-shopping-shoes.webp" alt="Product 4">
+              <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-container text-center">
+                <img src="img/blog_bg.jpg" alt="Product 1">
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-container text-center">
+                <img src="img/special_menu_bg.jpg" alt="Product 1">
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+                </div>
+                <span class="price-tag">$10</span>
+            </div>
+        </div>
+        <!--slider-->
+        <div class="col-md-4">
+          <div class="image-container text-center">
+              <div class="image-collection">     <!--slider start-->
+                <div class="carousel-container" id="slider1">
+                    <div class="carousel-slide">
+                        <img src="img/gallery_06.jpg" alt="Image 1">
+                        <img src="img/friends-legs-and-shoes-on-city-steps-for-bonding-travel-and-urban-break-with-drinks-smoothie.webp" alt="Image 2">
+                        <img src="img/gallery_09.jpg" alt="Image 3">
+                        <img src="img/blog_bg.jpg" alt="Image 3">
+                        <!-- Add more images as needed -->
+                    </div>
+                    <button class="prev" onclick="prevSlide('slider1')">&#10094;</button>
+                    <button class="next" onclick="nextSlide('slider1')">&#10095;</button>
+                </div>
+              </div>
+              <div class="button-container">
+                  <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+              </div>
+              <span class="price-tag">$10</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="image-container text-center">
+              <div class="image-collection">
+                <div class="carousel-container" id="slider2">
+                    <div class="carousel-slide">
+                        <img src="img/gallery_01.jpg" alt="Image 1">
+                        <img src="img/gallery_02.jpg" alt="Image 2">
+                        <img src="img/gallery_04.jpg" alt="Image 3">
+                        <img src="img/gallery_05.jpg" alt="Image 3">
+                        <!-- Add more images as needed -->
+                    </div>
+                    <button class="prev" onclick="prevSlide('slider2')">&#10094;</button>
+                    <button class="next" onclick="nextSlide('slider2')">&#10095;</button>
+                </div>
+              </div>
+              <div class="button-container">
+                  <button class="button" onclick="window.location.href='redirect-url'">Shop Now</button>
+              </div>
+              <span class="price-tag">$10</span>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+  function showSlides(sliderId) {
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(`#${sliderId} .carousel-slide img`);
+      const containerWidth = document.querySelector(`#${sliderId}`).clientWidth;
+
+      function animateSlides() {
+          slideIndex++;
+          if (slideIndex >= slides.length) { slideIndex = 0; }
+          const offset = -slideIndex * containerWidth;
+          document.querySelector(`#${sliderId} .carousel-slide`).style.transform = `translateX(${offset}px)`;
+          setTimeout(animateSlides, 3000); // Change slide every 3 seconds (3000 milliseconds)
+      }
+
+      animateSlides();
+  }
+
+  function nextSlide(sliderId) {
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(`#${sliderId} .carousel-slide img`);
+      const containerWidth = document.querySelector(`#${sliderId}`).clientWidth;
+
+      slideIndex++;
+      if (slideIndex >= slides.length) { slideIndex = 0; }
+      const offset = -slideIndex * containerWidth;
+      document.querySelector(`#${sliderId} .carousel-slide`).style.transform = `translateX(${offset}px)`;
+  }
+
+  function prevSlide(sliderId) {
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(`#${sliderId} .carousel-slide img`);
+      const containerWidth = document.querySelector(`#${sliderId}`).clientWidth;
+
+      slideIndex--;
+      if (slideIndex < 0) { slideIndex = slides.length - 1; }
+      const offset = -slideIndex * containerWidth;
+      document.querySelector(`#${sliderId} .carousel-slide`).style.transform = `translateX(${offset}px)`;
+  }
+
+  // Initialize sliders
+  showSlides('slider1');
+  showSlides('slider2');
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Affiliate Marketing. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
